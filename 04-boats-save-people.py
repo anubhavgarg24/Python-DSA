@@ -10,12 +10,14 @@ def savePeople(arr, k):
             break
 
         # Now start comparing the weights
-        elif(arr[left] + arr[right]<=k): # carry the heaviest & lightest person together
+        
+        # carry the heaviest & lightest person together
+        elif(arr[left] + arr[right]<=k): 
             left +=1
-            
+        # In every iteration dec. right & inc. boats         
         right -=1
         boats +=1 
-        # carry the heaviest person alone
+        
         # else: 
         #     right -=1
         #     boats +=1 
@@ -25,5 +27,5 @@ arr = [1, 2, 3, 3]
 limit = 3
 ans = savePeople(arr, limit)
 # worst case we will take maximum boats = no. of people
-# as max+_weight <=limit
+# as max_weight <=limit
 print("min boats: %d"%ans)
